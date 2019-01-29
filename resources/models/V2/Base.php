@@ -27,7 +27,7 @@ class Base {
 
     protected static function load_model($object, $class_to_instanciate = '')
     {
-        $class_to_instanciate = $class_to_instanciate ?: static::class;
+        $class_to_instanciate = $class_to_instanciate ?: get_called_class();
         if(is_array($object)) {
             return array_map(function ($element) use ($class_to_instanciate) {
                 return new $class_to_instanciate($element);

@@ -4,7 +4,7 @@
  * Plugin Providers configuration.
  */
 return [
-    ZypeMedia\Providers\ZypeService::class,
-    ZypeMedia\Providers\RoutingService::class,
-    ZypeMedia\Providers\HooksService::class,
+    'ZypeMedia\Providers\ZypeService'
+    'ZypeMedia\Providers\RoutingService',
+    'ZypeMedia\Providers\HooksService',
 ];

@@ -35,7 +35,7 @@ class Base {
 
     protected static function load_model($object)
     {
-        $class_name = static::class;
+        $class_name = get_called_class();
         if(is_array($object)){
             return array_map(function ($element) use ($class_name) {
                 return new $class_name($element);
