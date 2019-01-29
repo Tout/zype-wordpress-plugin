@@ -191,7 +191,7 @@ if (!class_exists('Themosis')) {
             /*
              * Service providers.
              */
-            $providers = apply_filters('themosis_service_providers', [
+            $provider_classes = [
                 Themosis\Ajax\AjaxServiceProvider::class,
                 Themosis\Asset\AssetServiceProvider::class,
                 Themosis\Config\ConfigServiceProvider::class,
@@ -211,7 +211,9 @@ if (!class_exists('Themosis')) {
                 Themosis\User\UserServiceProvider::class,
                 Themosis\Validation\ValidationServiceProvider::class,
                 Themosis\View\ViewServiceProvider::class,
-            ]);
+            ];
+
+            $providers = apply_filters('themosis_service_providers', $provider_classes);
 
             foreach ($providers as $provider) {
                 $this->container->register($provider);
